@@ -3,6 +3,7 @@ import java.awt.Graphics
 
 class Resource: Grid{
 
+    var count = 0
     var food = 100
     var cells = mutableListOf<Cell>()
 
@@ -15,9 +16,11 @@ class Resource: Grid{
         }
         g.fillRect(x,y,size,size)
         for (cell in cells)
-            cell.draw(g,x,y,size-8)
+            cell.draw(g,x,y,size)
     }
 
-
+    fun newCell(){
+        cells.add(Cell(Color(0,0,0,0)))
+    }
 
 }

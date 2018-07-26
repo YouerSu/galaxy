@@ -1,9 +1,9 @@
 import java.awt.Graphics
 import javax.swing.JPanel
 
-class View(val galaxy: Galaxy): JPanel() {
-    val GRID_SIZE = 16
+val GRID_SIZE = 16
 
+class View(val galaxy: Galaxy): JPanel() {
 
     override fun paint(g: Graphics?) {
         super.paint(g)
