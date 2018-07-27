@@ -10,6 +10,16 @@ class Cell (val color: Color): Grid{
         g.fillRect(x,y,size/level,size/level)
     }
 
+    fun move(grids:Array<Resource>,me: Resource):Boolean{
+        for (grid in grids) {
+            if (grid.food-level*10 > me.food) {
+                grid.cells.add(this)
+                return true
+            }
+        }
+        return false
+    }
+
 
 
 }

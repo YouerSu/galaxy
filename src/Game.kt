@@ -5,7 +5,6 @@ fun main(args:Array<String>) {
     val view = View(Galaxy(100,100))
     val frame = JFrame()
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    frame.isResizable = false
     frame.title = "Galaxy"
     frame.add(view)
     frame.pack()

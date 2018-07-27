@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Galaxy {
 
     private int width;
@@ -27,6 +30,20 @@ public class Galaxy {
 
     public Grid getGrid(int weight,int height){
         return galaxy[weight][height];
+    }
+
+    public Grid[] getNeighbour(int row, int col) {
+        List<Grid> list = new ArrayList();
+        for ( int i=-1; i<2; i++ ) {
+            for ( int j=-1; j<2; j++ ) {
+                int r = row+i;
+                int c = col+j;
+                if ( r >-1 && r<height && c>-1 && c<width && !(r== row && c == col) ) {
+                    list.add(galaxy[r][c]);
+                }
+            }
+        }
+        return (Grid[]) list.toArray();
     }
 
 }
